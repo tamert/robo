@@ -1,0 +1,41 @@
+{
+  "manifest_version": 2,
+  "name": "Robo Youtube",
+  "description": "Youtube fallow both",
+  "homepage_url": "https://www.roboyoutube.com",
+  "version": "1.1",
+  "icons": {
+    "48": "app/img/icons/icon.png",
+    "96": "app/img/icons/icon@2x.png"
+  },
+
+    "background": {
+    "scripts": ["app/model/database.js", "app/controller/background.js"]
+  },
+
+  "permissions": [
+    "history",
+    "storage",
+    "tabs",
+    "cookies",
+    "browsingData",
+    "unlimitedStorage",
+    "background",
+    "identity",
+    "*://*.roboyoutube.com/*",
+    "*://*.youtube.com/*"
+  ],
+
+  "web_accessible_resources": ["app/model/*","app/js/*"],
+
+  "browser_action": {
+    "default_icon": "app/img/icons/icon.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://*.youtube.com/*"],
+      "js": ["./app/js/jquery.js", "./app/js/md5.js", "./app/js/url.js", "./app/js/functions.js",  "./app/controller/content.js"]
+    }
+  ]
+}

@@ -14,9 +14,16 @@ browser.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   var tab_id = sender.tab.id;
   var extensionId = sender.extensionId;
 
+  if(request.addItem.keyword) {
+      browser.tabs.sendMessage(
+      tab_id,
+      { 'ekleniyor' :request.addItem.keyword}              
+      );
+  }
+
   browser.tabs.sendMessage(
   	tab_id,
-  	{ 'gördüm' :  've 1 arttırıyorum :D'}              
+  	{ 'status' :  'gördüm mü?', 'message' : request}              
   );
 
 });

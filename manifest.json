@@ -35,7 +35,8 @@
   "content_scripts": [
     {
       "matches": ["https://*.youtube.com/*"],
-      "js": ["./app/js/jquery.js", "./app/js/md5.js", "./app/js/url.js", "./app/js/functions.js",  "./app/controller/content.js"]
+      "js": ["./app/js/jquery.js", "./app/js/md5.js", "./app/js/url.js", "./app/js/functions.js",  "./app/controller/content.js"],
+      "css" : ["./app/css/main.css"]
     }
   ]
 }

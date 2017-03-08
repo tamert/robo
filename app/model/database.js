@@ -1,40 +1,14 @@
 var db_index = [];
 var db_sql = [];
 
-function openDB(){
-  try {
-      if (!!window.openDatabase) {
-          var shortName = 'tales';
-          var version = '1.0';
-          var displayName = 'Tall Tales Database';
-          var maxSize = 65536; // in bytes
-          db = openDatabase(shortName, version, displayName, maxSize); 
-          // You should have a database instance in db.
-      } else {
-          console.log('not supported');
-      }
-  } catch(e) {
-      // Error handling code goes here.
-      if (e == 2) {
-          // Version number mismatch.
-          console.log("Invalid database version.");
-      } else {
-          console.log("Unknown error "+e+".");
-      }
-      return;
-  }
-}
 
-openDB();
 
 function connect_db(user_id, callback) {
-
-
 
     /*
      console.log('function çalıştı.... ');
 
-     db_sql[user_id] = window.openDatabase('roboinsta_' + user_id, '', 'RoboInsta', null, function(db) {});
+     db_sql[user_id] = window.openDatabase('roboyoutube_' + user_id, '', 'RoboInsta', null, function(db) {});
 
 
      db_sql[user_id].transaction(function(tx) {
@@ -67,10 +41,7 @@ function connect_db(user_id, callback) {
     }; // This line should only be needed if it is needed to support the object's constants for older browsers
     window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || window.msIDBKeyRange;
 
-
-    console.log('function geldi mö?.... ');
-
-    var request = window.indexedDB.open("roboinsta_" + user_id, 26);
+    var request = window.indexedDB.open("roboyoutube_" + user_id, 26);
 
     request.onupgradeneeded = function(event) {
         var db = event.target.result;
@@ -81,12 +52,7 @@ function connect_db(user_id, callback) {
           else
              var objStore = txn.objectStore('names3');
 
-
-
-
     };
-
-
 
     request.onerror = function(event) {
         // Do something with request.errorCode!
@@ -96,17 +62,12 @@ function connect_db(user_id, callback) {
 
     request.onsuccess = function(e) {
         console.log(e);
-
         db_index[user_id] = e.target.result;
-    
-       
+
         //databaseler hazır uygulamaya başla
         return callback();
 
     }
-
-
-    console.log('funtion sonu .......');
 
 
 }

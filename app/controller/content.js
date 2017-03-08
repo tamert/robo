@@ -41,7 +41,19 @@ console.log('burası youtube ' + browser.runtime.id);
 var sending = browser.runtime.sendMessage(null, { 'test' :  'tamer'}, null);
 
 browser.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-  console.log(request);
+
+	if(request.type=='debug') {
+		console.log('debug');
+		console.log(request);
+	}	
+
+	if(request.type=='add-list-success') {
+		console.log('Eklenme Başarılı');
+		console.log(request);
+	}
+
+
+
 });
 
 window.address = window.location.href;
@@ -95,7 +107,6 @@ function runSearch(control) {
 		if(window.location.href!=window.address) {
 			window.address = window.location.href;
 		} else {
-			console.log('say');
 			return true;
 		}
 	}
@@ -140,6 +151,7 @@ $(function() {
     }, 1000);
 	
 
+	
 
 	var youtubeId = $('.guide-my-channel-icon').closest('.guide-item').data('external-id');
 	var myID = md5(youtubeId);

@@ -39,7 +39,6 @@ browser.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
         });
         return;
-
     }
 
     if (typeof request.deleteItem !== 'undefined') {
@@ -114,8 +113,3 @@ browser.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
 });
 
-
-
-/*
-  db_index[1234].transaction(["white_list2"],"readwrite").objectStore("white_list2").put({'username': 'onur','nerden':'follows'}).onsuccess = function(e) {   };
-*/

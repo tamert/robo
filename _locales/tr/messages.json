@@ -1,0 +1,14 @@
+{
+   "lcl_menu": {
+      "message": "Kelimeler"
+   },
+   "lcl_add": {
+      "message": "Ekle"
+   },
+   "lcl_search_word": {
+      "message": "Aranan Kelime"
+   },
+   "lcl_no_records": {
+      "message": "Kayıt Yok"
+   }
+}

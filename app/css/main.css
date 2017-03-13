@@ -50,14 +50,23 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
 .email-avatar{width:40px;height:40px}
 @media (min-width: 40em) {
 #layout{padding-left:500px;position:relative}
-#nav,#list{position:fixed;top:0;bottom:0;overflow:auto}
+#nav,#list{position:fixed;top:0;bottom:0;}
 #nav{margin-left:-500px;width:150px;height:100%}
 .nav-inner{display:block;padding:2em 0}
 #nav .nav-menu-button{display:none}
 #list{margin-left:-350px;width:100%;height:33%;border-bottom:1px solid #ddd}
-#main{position:fixed;top:33%;right:0;bottom:0;left:150px;overflow:auto;width:auto}
+#main{position:fixed;top:33%;right:0;bottom:0;left:150px;width:auto}
 }
 @media (min-width: 60em) {
 #list{margin-left:-350px;width:350px;height:100%;border-right:1px solid #ddd}
 #main{position:static;margin:0;padding:0}
 }
+
+.keywords {
+	margin-top: 25px;
+	max-height: 250px; 
+	overflow-y: auto;
+	overflow-x: hidden;
+
+}
+.pure-menu-link .title {  white-space: pre-line;}
